@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+
+	<div class="box-shadow" style="background-color: white" >
+		<table class="table">
+			<th><h1>List of Customers</h1></th>
+			<th></th>
+			
+			
+		</table> 
+		
+		
+	    <table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">NO.</th>
+		      <th scope="col">NAME</th>
+		      <th scope="col">PHONE</th>
+		      <th scope="col">PIECES</th>
+		      <th scope="col">CONTAINER NAME</th>
+		      <th><a class="btn btn-outline-danger" id=btn href="{% url 'removeAll' %}">Remove All</a></th>
+		      
+		      
+		      <th>Change Status</th>
+		      <th>Status</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for i in allcustomers %}
+		    <tr>
+		      <td>{{forloop.counter}}</td>
+		      <td>{{i.name}}</th>
+		      <td>{{i.phone}}</td>
+		      <td>{{i.pieces}}</td>
+		      <td>{{i.container}}</td>
+		      <td><a class="text-danger" href="{% url 'deleteCustomer' i.id %}">remove</a></td>
+		      <td><a href="{% url 'updateCustomer' i.id %}">Change Status</a></td>
+		      
+		      <td><span class="badge badge-success test" status="{{i.status}}">{{i.status}}</span></td>
+
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+
+		
+	</div>
+</div>
+
+
+
+
+{% endblock content %}
+

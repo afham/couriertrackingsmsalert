@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+
+	<div class="box-shadow" style="background-color: white" >
+		<table class="table">
+			<th><h1>LIST OF CONTAINERS</h1></th>
+			
+		</table> 
+		
+	    <table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th></th>
+		      <th scope="col">Container no.</th>
+		      <th scope="col">Container Name</th>
+		      <th></th>
+		      <th>Change Status</th>
+		      <th>status</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for i in containers %}
+		    <tr>
+		      <td><a href="{% url 'containerpages' i.id %}">View</a></td>
+		      <td>{{forloop.counter}}</td>
+		      <td>{{i.container_no}}</th>
+		      <td><a class="text-danger" href="{% url 'deleteContainer' i.id %}">remove</a></td>
+		      <td><a href="{% url 'updateContainer' i.id %}">Change Status</a></td>
+		      
+		      <td><span class="badge badge-success">{{i.cont_status}}</span></th>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+		
+	</div>
+</div>
+
+
+{% endblock content %}

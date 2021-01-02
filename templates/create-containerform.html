@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+	<form action="" method="POST" class="form-login box-shadow">
+		{% csrf_token %}
+		<h3>Create a Container</h3>
+		<br>
+		{{form.as_p}}
+		<button class="btn btn-primary" type="sumbit" name="sumbit">Submit</button>
+		<div>
+		
+</div>
+	</form>
+</div>
+{% endblock content %}

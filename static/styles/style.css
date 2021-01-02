@@ -1,0 +1,57 @@
+body{
+	background-color: #eee;
+	
+	
+}
+.wrapper{
+	margin: 40px;
+}
+.logo{
+	width: 30%;
+	height: auto;
+}
+
+.form-login{
+	max-width: 400px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 30px;
+}
+.email,.password,.checkbox,.h1,.re-password,.username,.submit{
+	margin-bottom: 30px;
+}
+.box-shadow{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* customer-------------------*/
+
+
+/*-----------navbAr------------------*/
+
+
+.logo{
+	width: 30%;
+
+
+}
+
+
+.nav-item{
+	padding-right:1.5rem;
+	padding-top: 0.5rem;
+}
+
+.active {
+    background: cyan;
+    color: #fff;
+}
+.addButton {
+    background: #fff;
+    color: cyan;
+}
+
+
+
+
+/*---------------sidenav-------------------------*/

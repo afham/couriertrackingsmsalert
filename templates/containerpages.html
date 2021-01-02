@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+	<div class="box-shadow" style="background-color: white" >
+		<table class="table">
+			<th><h2>CONTAINER ID :<br><span class="badge badge-primary">{{containers.id}}</span></h2></th>
+			<th><h2>CONTAINER NAME :<br><span class="badge badge-primary">{{containers.container_no}}</span></h2></th>
+			<th><h3><a class="btn btn-outline-warning btn-lg" href="{% url 'create-groupcustomers' containers.id %}"><b>Add Customers</a></h3></th>
+			
+		</table>
+		
+		
+
+	    <table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">NO.</th>
+		      <th scope="col">NAME</th>
+		      <th scope="col">PHONE</th>
+		      <th scope="col">PIECES</th>
+		      <th scope="col">CONTAINER NAME</th>
+		      <th></th>
+		      <th>Change Status</th>
+		      <th>Status</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for i in customers %}
+		    <tr>
+		      <td>{{forloop.counter}}</td>
+		      <td>{{i.name}}</th>
+		      <td>{{i.phone}}</td>
+		      <td>{{i.pieces}}</td>
+		      <td>{{i.container}}</td>
+		      <td><a class="text-danger" href="{% url 'deleteCustomer' i.id %}">remove</a></td>
+		      <td><a href="{% url 'updateCustomer' i.id %}">Change Status</a></td>
+		      
+		      <td><span class="badge badge-success">{{i.status}}</span></td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+		
+	</div>
+</div>
+
+
+{% endblock content %}

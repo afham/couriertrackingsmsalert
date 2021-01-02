@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+
+
+
+
+{% block content %}
+<!--------------------------------------REGISTER FORM ------------------------------------------------------------------->
+
+<div class="wrapper">
+<form action="" method="POST" class="form-login box-shadow ">
+    {% csrf_token %}
+    
+    
+    
+    <h1 class="h1">Registration Form</h1>
+    <div class="username">
+      <label>username</label>
+      {{form.username}}
+    </div>
+    <div class="email">
+      <label>email</label>
+      {{form.email}}
+    </div>
+    <div class="password">
+      <label>password</label>
+      {{form.password1}}
+    </div>
+    <div class="re-password">
+      <label>re-password</label>
+      {{form.password2}}
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" value="remember-me" name="remember-me" id="checkbox">
+      Remember me
+    </div>
+    
+    <div class="login"><button type="submit" class="btn btn-lg btn-primary btn-block" id="Login">Register</button></div>
+    <br>
+    <a href="{% url 'loginPage' %}">Alredy have an account ? Login</a>
+    
+  </form>
+</div>
+
+<!-------------------------------------END REGIISTER FORM---------------------------------------------------------------->
+{% endblock content %}

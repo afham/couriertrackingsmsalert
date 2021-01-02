@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<p>Are you sure you want to delete "{{container}}"</p>
+
+<form action="{% url 'deleteContainer' container.id %}" method="POST">
+	{% csrf_token %}
+	<a href="{% url 'container' %}">Cancel</a>
+	<button type="submit">Comfirm</button>
+</form>
+
+{% endblock %}

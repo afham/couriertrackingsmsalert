@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+	<div class="box-shadow" style="background-color: white" >
+		<table class="table table">
+			<th><h2>Add customers to<br><span class="badge badge-primary">{{container.container_no}}</span></h2></th>
+			<th><h2>CONTAINER id:<br><span class="badge badge-primary">{{container.id}}</span></h2></th>
+			
+			
+		</table>
+		
+		
+
+	    <table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">NAME</th>
+		      <th scope="col">PHONE</th>
+		      <th scope="col">PIECES</th>
+		      <th scope="col">CONTAINER NAME</th>
+		      <th></th>
+		      <th></th>
+		      <th>Customer Status</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for i in groupcustomers %}
+		    <tr>
+		      <td>{{forloop.counter}}</td>
+		      <td>{{i.name}}</th>
+		      <td>{{i.phone}}</td>
+		      <td>{{i.pieces}}</td>
+		      <td>{{i.container}}</td>
+		      <td><button data-id={{i.id}} data-cont_id={{container.id}} data-action="add" class="btn btn-secondary add-btn updatecontainer addButton" >Add</button></td>
+		      <td></td>
+		      <td><span class="badge badge-success">{{i.status}}</span></td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+		
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
